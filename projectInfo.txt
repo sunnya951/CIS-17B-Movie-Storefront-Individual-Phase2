@@ -1,0 +1,19 @@
+Version 1 Summary: Initial Landing Page Setup
+
+Files:
+index.html
+style.css
+
+What Was Done:
+Created a basic landing page layout using HTML5
+Added simple visual styling with an external CSS file (style.css)
+Placed files inside htdocs/MovieStoreFront-Web for XAMPP compatibility
+Verified that everything loads correctly via http://localhost/MovieStoreFront-Web/index.html
+Initialized a new Git repository and pushed to GitHub
+Repo: CIS-17B_Movie_Storefront_Individual-Phase2
+
+Lines of Code Added:
+~70-80 lines (HTML + CSS)
+
+Time Spent:
+~1.5-2 hours (setup, design, GitHub configuration)
