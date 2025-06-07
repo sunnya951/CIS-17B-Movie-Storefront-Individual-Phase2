@@ -1,0 +1,28 @@
+<!-- register.html -->
+ <!DOCTYPE html>
+ <html lang="eng">
+ <head>
+    <meta charset="UTF-8">
+    <title>Register - Sunny's Movie Emporium</title>
+    <link rel="stylesheet" href="style.css">
+ </head>   
+ <body>
+    <h1>Create a New Account</h1>
+
+    <form action="register.php" method="post">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="confirm">Confirm Password:</label><br>
+        <input type="password" id="confirm" name="confirm" required><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <p>Already have an account? <a href="login.html">Login here</a>.</p>
+    <p><a href="index.html">Back to Home</a></p>
+ </body>
+ </html>
