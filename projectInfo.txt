@@ -58,3 +58,21 @@ Lines of Code Added:
 
 Time Spent:
 ~2-3 hours (HTML/CSS design, PHP logic setup, folder validation, and testing)
+
+Version 4 Summary: Basic Login and Registration handling
+
+Files:
+login.html
+register.html
+src/php/login.php
+src/php/register.php
+
+What Was Done:
+login.php: Validates if the user is "admin" with hardcoded credentials and shows success/failure messages
+register.php: Simulates user registration with simple success/failure output based on form input
+
+Lines of Code Added:
+~50-70 lines (PHP + HTML updates)
+
+Time Spent:
+~1.5-2 hours (debugging structure, fixing file paths, clarifying logic flow)

@@ -24,10 +24,39 @@
             <h2>Welcome to the ultimate movie shopping experience!</h2>
             <p>Browse our collection, add movies to your cart, and checkout with ease.</p>
         </section>
+        
+        <section id="movie-list">
+            <h2>Now Showing</h2>
+            <div id="movies"></div>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2025 Sunny's Movie Emporium</p>
     </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('src/php/get_movies.php')
+            .then(response => response.json())
+            .then(data => {
+                const moviesDiv = document.getElementById('movies');
+                data.forEach(movie => {
+                    const card = document.createElement('div');
+                    card.className = 'movie-card';
+                    card.innerHTML = `
+                    <h3>${movie.title}</h3>
+                    <p><strong>Genre:</strong> ${movie.genre}</p>
+                    <p><strong>Price:</strong> ${movie.price}</p>
+                    <p><strong>Stock:</strong> ${movie.stock}</p>
+                    `;
+                    moviesDiv.appendChild(card);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching movies:', error);
+            });
+    });
+    </script>
  </body>   
  </html>

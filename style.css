@@ -44,3 +44,18 @@ input[type="submit"]:hover {
 p {
     margin-top: 20px;
 }
+
+#movies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.movie-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 200px;
+    background-color: #f9f9f9;
+}
