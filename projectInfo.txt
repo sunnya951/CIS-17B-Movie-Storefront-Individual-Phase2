@@ -17,3 +17,44 @@ Lines of Code Added:
 
 Time Spent:
 ~1.5-2 hours (setup, design, GitHub configuration)
+
+Version 2 Summary: Web Login and Register UI + PHP Stubs
+
+Files:
+login.html
+register.html
+style.css (updated)
+src/php/login.php
+src/php/register.php
+
+What Was Done:
+Created basic login and register pages with HTML/CSS layout
+Each form has username/password fields and submit buttons
+Linked pages to 'login.php' and 'register.php' for future back-end handling
+Verified browser display and styling
+Set up MVC structure for PHP logic in future versions
+
+Lines of Code Added:
+~80-100 (HTML/CSS combined)
+
+Time Spent:
+~2-3 hours (page creation, layout, directory setup, testing, version control)
+
+Version 3 Summary: Front-End Login/Register + PHP Backend Hookup
+
+Files Created:
+login.html (updated)
+register.html (updated)
+src/php/login.php
+src/php/register.php
+
+What Was Done:
+Linked each form to its repective backend PHP handler (login.php and register.php)
+Implemented a basic test login with hardcoded "admin"/"admin" credentials in login.php
+Successfully tested the flow: user input -> PHP -> server response
+
+Lines of Code Added:
+~90-110 lines (HTML, PHP, and CSS combined)
+
+Time Spent:
+~2-3 hours (HTML/CSS design, PHP logic setup, folder validation, and testing)
