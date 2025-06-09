@@ -1,0 +1,33 @@
+<!-- Updated register.html with Javascript regex validation -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <title>Register - Sunny's Movie Emporium</title>
+    <link rel="stylesheet" href="style.css">
+ </head>   
+ <body>
+    <h1>Create a New Account</h1>
+
+    <form id="registerForm" action="src/php/register.php" method="POST">
+        <label for="newuser">New Username:</label>
+        <input type="text" id="newuser" name="newuser" required>
+
+        <label for="newpass">New Password:</label>
+        <input type="password" id="newpass" name="newpass" required>
+
+        <label for="confirm">Confirm Password:</label>
+        <input type="password" id="confirmpass" name="confirmpass" required>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="login.html">Login here</a>.</p>
+    <p><a href="index.html">Back to Home</a></p>
+
+    <script src="src/js/validation.js"></script>
+    <script>
+         document.getElementById('registerForm').addEventListener('submit', validateRegisterForm);
+    </script>
+ </body>
+ </html>

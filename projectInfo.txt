@@ -103,3 +103,25 @@ Total: ~50 lines
 
 Time Spent:
 ~2.5 hours
+
+Version 6 Summary: Regex Form Validation with JavaScript
+
+Files:
+register.html (updated)
+login.html (updated)
+src/js/validation.js
+
+What Was Done:
+Implemented client-side validation using JavaScript (validation.js)
+Added regex rules for: Username (4-12 chars, letters and digits only)
+Password (6-20 chars, must include letters and numbers)
+Confirm password matches original
+Connected validation.js to both forms
+Alert messages prevent form submission on invalid input
+
+Lines of Code Added:
+~60-70 lines (HTML + JS)
+
+Time Spent:
+~2.5 hours (planning regex, implementing JS, testing, debugging, archiving)
+
