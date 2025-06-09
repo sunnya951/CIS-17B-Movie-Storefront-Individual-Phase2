@@ -76,3 +76,30 @@ Lines of Code Added:
 
 Time Spent:
 ~1.5-2 hours (debugging structure, fixing file paths, clarifying logic flow)
+
+Version 5 Summary: Dynamic Movie Display from Backend
+
+Files:
+src/php/get_movies.php
+index.html (updated)
+style.css (updated)
+
+What Was Done:
+Backend (PHP): Created get_movies.php to simulate loading movie data from a database
+Movie data is structured in an array of associative arrays (each representing a movie)
+PHP script returns the data as a JSON response using json_encode()
+Frontend (HTML + JS):In index.html added a Now Showing section to visually display movie listings
+Embedded a <script> block that calls get_movies.php using the Fetch API
+Parses the JSON response
+Dynamically builds and inserts HTML movie cards into the page
+CSS (style.css) styled the movie card layout using flexbox and padding
+Designed individual .movie-card boxes to hold movie details neatly
+
+Lines of Code Added:
+PHP: ~20 lines
+HTML: ~15 lines (movie section + JS)
+CSS: ~15 lines
+Total: ~50 lines
+
+Time Spent:
+~2.5 hours
