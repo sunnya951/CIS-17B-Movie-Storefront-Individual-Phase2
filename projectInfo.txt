@@ -125,3 +125,24 @@ Lines of Code Added:
 Time Spent:
 ~2.5 hours (planning regex, implementing JS, testing, debugging, archiving)
 
+Version 7 Summary: Final Login Flow and Regex Validation
+
+Files:
+login.html (updated)
+register.html
+src/php/login.php (updated)
+src/php/register.php (updated)
+src/js/validation.js (updated)
+
+What Was Done:
+Improved login system to handle admin and user logins distinctly 
+Admin logs in with admin/admin1, user gets personalized welcome messages
+Both users redirect back to homepage with working links
+JavaScript validation added to login and registration forms using regex
+Full end-to-end test of login/registration behavior in the browser
+
+Lines of Code Added:
+~90-11- lines (HTML, PHP, JavaScript combined)
+
+Time Spent:
+~3 hours (validation logic, integration, testing, bug fixing)
