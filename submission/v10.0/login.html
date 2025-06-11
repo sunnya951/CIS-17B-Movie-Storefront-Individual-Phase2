@@ -1,0 +1,50 @@
+<!-- login.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <title>Login - Sunny's Movie Emporium</title>
+    <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+   
+   <header>
+      <h1>Sunny's Movie Emporium</h1>
+      <nav>
+         <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Browse Movies</a></li>
+            <li><a href="register.html">Register</a></li>
+         </ul>
+      </nav>
+   </header>
+   
+   <main>
+      <h2>Login to Your Account</h2>
+   
+    <!-- This form will later send data to login.php -->
+   <form id="loginForm" action="src/php/login.php" method="POST">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Login</button>
+   </form>
+
+     <p>Don't have an account? <a href="register.html">Register here</a>.</p>
+     <p><a href="index.html">Back to Home</a></p>
+   </main>
+
+   <footer>
+      <p>&copy; 2025 Sunny's Movie Emporium</p>
+   </footer>
+
+   <script src="src/js/validation.js"></script>
+   <script>
+      document.getElementById('loginForm').addEventListener('submit', validateLoginForm);
+   </script>
+   
+ </body>   
+ </html>

@@ -191,3 +191,20 @@ Lines of Code Added:
 
 Time Spent:
 ~3 hours
+
+Version 10 Summary:
+
+Files:
+movies.html (updated)
+cart.html(updated)
+
+What Was Done:
+Implemented cart display in cart.html using localStorgae
+Added Clear Cart button with JavaScript to clear contents
+Fully tested "Add to Cart" -> "View Cart" flow
+
+Line of Code Added:
+~40 lines
+
+Time Spent:
+~45 minutes
