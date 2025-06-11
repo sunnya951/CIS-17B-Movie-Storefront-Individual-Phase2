@@ -142,7 +142,52 @@ JavaScript validation added to login and registration forms using regex
 Full end-to-end test of login/registration behavior in the browser
 
 Lines of Code Added:
-~90-11- lines (HTML, PHP, JavaScript combined)
+~90-110 lines (HTML, PHP, JavaScript combined)
 
 Time Spent:
 ~3 hours (validation logic, integration, testing, bug fixing)
+
+Version 8 Summary
+
+Files:
+index.html (updated)
+login.html (updated)
+register.html (updated)
+movies.html
+style.css
+src/js/validation.js
+src/php/login.php
+src/php/register.php
+src/php/get_movies.php
+
+What Was Done:
+Added movies.html page with dynamic movie cards using Javascript Fetch
+Integrated get_movies.php to simulate movie data from the server
+Linked movies page from navbar in index, login, and register pages
+Updated login and register pages with proper header/footer structure
+
+Lines of Code Added:
+~90 lines
+
+Time Spent: 
+~1.5 hours
+
+Version 9 Summary: Add-to-Cart with LocalStorage
+
+Files:
+movie.html
+cart.js
+src.php/get_movies.php
+
+What Was Done:
+Implemented movies.html to display a list of hardcoded movies using JavaScript
+Each movie includes an Add to Cart buttons
+Clicking the button saves movies data (title, genre, price, stock) to LocalStorage
+Created cart.js to manage storing movies in LocalStorage
+Added get_movies.php as placeholder for future dynamic backend support
+
+Lines of Code Added:
+~110-130 lines
+
+Time Spent:
+~3 hours
