@@ -208,3 +208,21 @@ Line of Code Added:
 
 Time Spent:
 ~45 minutes
+
+Version 11 Summary: MySQL Integration and Admin Session Routing
+
+Files:
+connect.php
+moviestore_db.sql
+
+What Was Done:
+Connected site to a live MySQL database using PHP (connect.php)
+Created user and movies tables via moviestore_db.sql
+Hashed passwords using password_hash() and verified password_verify()
+Used PHP sessions to track login state
+Automatically redirected admins to admin.php after login
+Seeded admin user(admin/admin1, hashed) into the database
+
+Lines of Code Added:
+~100-120 lines
+~3 hours (MySQL setup, login integration, admin handling)
