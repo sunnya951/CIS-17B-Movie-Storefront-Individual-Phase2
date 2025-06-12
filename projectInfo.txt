@@ -226,3 +226,21 @@ Seeded admin user(admin/admin1, hashed) into the database
 Lines of Code Added:
 ~100-120 lines
 ~3 hours (MySQL setup, login integration, admin handling)
+
+Version 12 Summary:
+
+Files:
+admin.php
+
+What Was Done:
+Built out the Admin Panel (admin.php) to: Display all movies with editable fields for price and stock
+Include an "Update" button for each movie
+Created update_movie.php 
+Ensured admin session logic is properly enforced
+Confirmed that changes persist via database using phpMyAdmin
+
+Lines of Code Added:
+~90-100 lines
+
+Time Spent:
+~1 hour
