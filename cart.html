@@ -1,84 +1,65 @@
-<!-- cart.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Your Cart - Sunny's Movie Emporium</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Your Cart - Sunny's Movie Emporium</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Your Shopping Cart</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="movies.html">Browse Movies</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>Sunny's Movie Emporium</h1>
+    <nav>
+      <ul>
+        <li><a href="movies.html">Browse Movies</a></li>
+        <li><a href="logout.php" id="logoutLink" style="display:none;">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <div id="cart-items"></div>
-        <div id="cart-total"></div>
+  <main>
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <p id="totalPrice"></p>
+    <button onclick="checkout()">Checkout</button>
+  </main>
 
-        <button id="checkout-btn">Checkout</button>
-        <button id="clear-cart">Clear Cart</button>
-    </main>
+  <footer>
+    <p>&copy; 2025 Sunny's Movie Emporium</p>
+  </footer>
 
-    <footer>
-        <p>&copy; 2025 Sunny's Movie Emporium</p>
-    </footer>
+  <script>
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const container = document.getElementById('cartItems');
+    let total = 0;
 
-    <script>
-        function loadCart() {
-            const cart = JSON.parse(localStorage.getItem("cart")) || [];
-            const cartItemsDiv = document.getElementById("cart-items");
-            const cartTotalDiv = document.getElementById("cart-total");
+    cart.forEach((item, index) => {
+      total += item.price;
+      container.innerHTML += `
+        <div>
+          <strong>${item.title}</strong> - ${item.genre} - $${item.price.toFixed(2)}
+          <button onclick="removeItem(${index})">Remove</button>
+        </div>
+      `;
+    });
 
-            if (cart.length === 0) {
-                cartItemsDiv.innerHTML = "<p>Your cart is empty.</p>";
-                cartTotalDiv.innerHTML = "";
-                return;
-            }
+    document.getElementById('totalPrice').textContent = `Total: $${total.toFixed(2)}`;
 
-            let total = 0;
-            cartItemsDiv.innerHTML = "";
-            cart.forEach(item => {
-                const itemDiv = document.createElement("div");
-                itemDiv.className = "cart-item";
-                itemDiv.innerHTML = `
-                    <h3>${item.title}</h3>
-                    <p>Genre: ${item.genre}</p>
-                    <p>Price: $${item.price}</p>
-                    <hr>
-                `;
-                cartItemsDiv.appendChild(itemDiv);
-                total += parseFloat(item.price);
-            });
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      location.reload();
+    }
 
-            cartTotalDiv.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
-        }
+    function checkout() {
+      alert("Thank you for your purchase!");
+      localStorage.removeItem('cart');
+      location.reload();
+    }
 
-        document.addEventListener("DOMContentLoaded", loadCart);
-
-        document.getElementById("clear-cart").addEventListener("click", () => {
-            localStorage.removeItem("cart");
-            loadCart();
-        });
-
-        document.getElementById("checkout-btn").addEventListener("click", () => {
-            const cart = JSON.parse(localStorage.getItem("cart")) || [];
-            if (cart.length === 0) {
-                alert("Your cart is empty.");
-                return;
-            }
-
-            alert("Thank you for your purchase!");
-            localStorage.removeItem("cart");
-            window.location.href = "index.html";
-        });
-    </script>
+    // Show logout link if logged in
+    if (sessionStorage.getItem('loggedIn') === 'true') {
+      document.getElementById('logoutLink').style.display = 'inline';
+    }
+  </script>
 </body>
 </html>
-
