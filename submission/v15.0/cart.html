@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart - Sunny's Movie Emporium</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Sunny's Movie Emporium</h1>
+    <nav>
+      <ul>
+        <li><a href="movies.html">Browse Movies</a></li>
+        <li><a href="logout.php" id="logoutLink" style="display:none;">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <p id="totalPrice"></p>
+    <button onclick="checkout()">Checkout</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sunny's Movie Emporium</p>
+  </footer>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const container = document.getElementById('cartItems');
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      total += item.price;
+      container.innerHTML += `
+        <div>
+          <strong>${item.title}</strong> - ${item.genre} - $${item.price.toFixed(2)}
+          <button onclick="removeItem(${index})">Remove</button>
+        </div>
+      `;
+    });
+
+    document.getElementById('totalPrice').textContent = `Total: $${total.toFixed(2)}`;
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      location.reload();
+    }
+
+    function checkout() {
+      alert("Thank you for your purchase!");
+      localStorage.removeItem('cart');
+      location.reload();
+    }
+
+    // Show logout link if logged in
+    if (sessionStorage.getItem('loggedIn') === 'true') {
+      document.getElementById('logoutLink').style.display = 'inline';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Browse Movies - Sunny's Movie Emporium</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Sunny's Movie Emporium</h1>
+    <nav>
+      <ul id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html" id="loginLink">Login</a></li>
+        <li><a href="register.html" id="registerLink">Register</a></li>
+        <li><a href="logout.php" id="logoutLink" style="display:none;">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Now Showing</h2>
+    <div class="movie-container">
+      <div class="movie-card">
+        <img src="docs/Matrix.jpg" alt="The Matrix">
+        <h3>The Matrix</h3>
+        <p>Genre: Sci-Fi</p>
+        <p>Price: $3.99</p>
+        <button onclick="addToCart('The Matrix', 'Sci-Fi', 3.99)">Add to Cart</button>
+      </div>
+      <div class="movie-card">
+        <img src="docs/Inception.jpg" alt="Inception">
+        <h3>Inception</h3>
+        <p>Genre: Thriller</p>
+        <p>Price: $4.49</p>
+        <button onclick="addToCart('Inception', 'Thriller', 4.49)">Add to Cart</button>
+      </div>
+      <div class="movie-card">
+        <img src="docs/Interstellar.jpg" alt="Interstellar">
+        <h3>Interstellar</h3>
+        <p>Genre: Sci-Fi</p>
+        <p>Price: $4.99</p>
+        <button onclick="addToCart('Interstellar', 'Sci-Fi', 4.99)">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sunny's Movie Emporium</p>
+  </footer>
+
+  <script>
+    function addToCart(title, genre, price) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ title, genre, price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${title} added to cart!`);
+    }
+
+    // Show logout if user is logged in
+    if (sessionStorage.getItem('loggedIn') === 'true') {
+      document.getElementById('loginLink').style.display = 'none';
+      document.getElementById('registerLink').style.display = 'none';
+      document.getElementById('logoutLink').style.display = 'inline';
+    }
+  </script>
+</body>
+</html>
