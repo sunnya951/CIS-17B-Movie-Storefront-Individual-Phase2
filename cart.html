@@ -21,6 +21,8 @@
     <main>
         <div id="cart-items"></div>
         <div id="cart-total"></div>
+
+        <button id="checkout-btn">Checkout</button>
         <button id="clear-cart">Clear Cart</button>
     </main>
 
@@ -64,6 +66,19 @@
             localStorage.removeItem("cart");
             loadCart();
         });
+
+        document.getElementById("checkout-btn").addEventListener("click", () => {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            if (cart.length === 0) {
+                alert("Your cart is empty.");
+                return;
+            }
+
+            alert("Thank you for your purchase!");
+            localStorage.removeItem("cart");
+            window.location.href = "index.html";
+        });
     </script>
 </body>
 </html>
+
