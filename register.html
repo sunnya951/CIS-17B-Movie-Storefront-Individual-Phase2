@@ -1,25 +1,25 @@
 <!-- register.html -->
- <!DOCTYPE html>
- <html lang="en">
- <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <title>Register - Sunny's Movie Emporium</title>
     <link rel="stylesheet" href="style.css">
- </head>   
- <body>
+</head>
+<body>
 
-   <header>
-      <h1>Sunny's Movie Emporium</h1>
-      <nav>
-         <ul>
+<header>
+    <h1>Sunny's Movie Emporium</h1>
+    <nav>
+        <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="movies.html">Browse Movies</a></li>
             <li><a href="login.html">Login</a></li>
-         </ul>
-      </nav>
-   </header>
+        </ul>
+    </nav>
+</header>
 
-   <main>
+<main>
     <h2>Create a New Account</h2>
 
     <form id="registerForm" action="src/php/register.php" method="POST">
@@ -29,7 +29,7 @@
         <label for="newpass">New Password:</label>
         <input type="password" id="newpass" name="newpass" required>
 
-        <label for="confirm">Confirm Password:</label>
+        <label for="confirmpass">Confirm Password:</label>
         <input type="password" id="confirmpass" name="confirmpass" required>
 
         <button type="submit">Register</button>
@@ -37,15 +37,15 @@
 
     <p>Already have an account? <a href="login.html">Login here</a>.</p>
     <p><a href="index.html">Back to Home</a></p>
-   </main>
+</main>
 
-   <footer>
-      <p>&copy; 2025 Sunny's Movie Emporium</p>
-   </footer>
+<footer>
+    <p>&copy; 2025 Sunny's Movie Emporium</p>
+</footer>
 
-    <script src="src/js/validation.js"></script>
-    <script>
-         document.getElementById('registerForm').addEventListener('submit', validateRegisterForm);
-    </script>
- </body>
- </html>
+<script src="src/js/validation.js"></script>
+<script>
+    document.getElementById('registerForm').addEventListener('submit', validateRegisterForm);
+</script>
+</body>
+</html>
